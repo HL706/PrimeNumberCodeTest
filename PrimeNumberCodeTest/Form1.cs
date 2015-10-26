@@ -96,26 +96,17 @@ namespace PrimeNumberCodeTest
             EratosthenesLimit_1.Checked = !isAtkinAlgorithmSelected && indexOfSelection == 1;
             EratosthenesLimit_2.Checked = !isAtkinAlgorithmSelected && indexOfSelection == 2;
             EratosthenesLimit_3.Checked = !isAtkinAlgorithmSelected && indexOfSelection == 3;
-
-            AtkinLimit_1.Checked = isAtkinAlgorithmSelected && indexOfSelection == 1;
-            AtkinLimit_2.Checked = isAtkinAlgorithmSelected && indexOfSelection == 2;
-            AtkinLimit_3.Checked = isAtkinAlgorithmSelected && indexOfSelection == 3;
         }
 
         private void SetStateOfAlgorithmMenu(Boolean isAtkinAlgorithmSelected)
         {
             AlgorithmSieveOfEratosthenes.Checked = !isAtkinAlgorithmSelected;
-            AlgorithmSieveOfAtkin.Checked = isAtkinAlgorithmSelected;
         }
 
         private void GenerateTable_Click(object sender, EventArgs e)
         {
             // Set the generator based on the select menu items.
-            if (AlgorithmSieveOfAtkin.Checked)
-            {
-                _primeGenerator = new SieveOfAtkin();
-            }
-            else
+            if (AlgorithmSieveOfEratosthenes.Checked)
             {
                 _primeGenerator = new SieveOfEratosthenes();
             }
