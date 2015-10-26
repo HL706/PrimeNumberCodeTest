@@ -81,14 +81,14 @@
             // EratosthenesLimit_1
             // 
             this.EratosthenesLimit_1.Name = "EratosthenesLimit_1";
-            this.EratosthenesLimit_1.Size = new System.Drawing.Size(104, 22);
+            this.EratosthenesLimit_1.Size = new System.Drawing.Size(152, 22);
             this.EratosthenesLimit_1.Text = "100";
             this.EratosthenesLimit_1.Click += new System.EventHandler(this.EratosthenesLimit_1_Click);
             // 
             // EratosthenesLimit_2
             // 
             this.EratosthenesLimit_2.Name = "EratosthenesLimit_2";
-            this.EratosthenesLimit_2.Size = new System.Drawing.Size(104, 22);
+            this.EratosthenesLimit_2.Size = new System.Drawing.Size(152, 22);
             this.EratosthenesLimit_2.Text = "1000";
             this.EratosthenesLimit_2.Click += new System.EventHandler(this.EratosthenesLimit_2_Click);
             // 
@@ -97,7 +97,7 @@
             this.EratosthenesLimit_3.Checked = true;
             this.EratosthenesLimit_3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.EratosthenesLimit_3.Name = "EratosthenesLimit_3";
-            this.EratosthenesLimit_3.Size = new System.Drawing.Size(104, 22);
+            this.EratosthenesLimit_3.Size = new System.Drawing.Size(152, 22);
             this.EratosthenesLimit_3.Text = "10000";
             this.EratosthenesLimit_3.Click += new System.EventHandler(this.EratosthenesLimit_3_Click);
             // 
@@ -157,6 +157,7 @@
             this.GenerateTable.TabIndex = 4;
             this.GenerateTable.Text = "Generate!";
             this.GenerateTable.UseVisualStyleBackColor = true;
+            this.GenerateTable.Click += new System.EventHandler(this.GenerateTable_Click);
             // 
             // TablePanel
             // 
@@ -170,15 +171,16 @@
             // 
             // PrimeNumberTable
             // 
-            this.PrimeNumberTable.ColumnCount = 2;
-            this.PrimeNumberTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.PrimeNumberTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.PrimeNumberTable.AutoSize = true;
+            this.PrimeNumberTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.PrimeNumberTable.ColumnCount = 1;
+            this.PrimeNumberTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.PrimeNumberTable.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.PrimeNumberTable.Location = new System.Drawing.Point(3, 3);
             this.PrimeNumberTable.Name = "PrimeNumberTable";
-            this.PrimeNumberTable.RowCount = 2;
-            this.PrimeNumberTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.PrimeNumberTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.PrimeNumberTable.Size = new System.Drawing.Size(200, 100);
+            this.PrimeNumberTable.RowCount = 1;
+            this.PrimeNumberTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.PrimeNumberTable.Size = new System.Drawing.Size(54, 29);
             this.PrimeNumberTable.TabIndex = 0;
             // 
             // MainForm
@@ -199,6 +201,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.TablePanel.ResumeLayout(false);
+            this.TablePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
