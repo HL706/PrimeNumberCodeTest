@@ -41,10 +41,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.NumberOfPrimes = new System.Windows.Forms.TextBox();
             this.GenerateTable = new System.Windows.Forms.Button();
-            this.TablePanel = new System.Windows.Forms.Panel();
-            this.PrimeNumberTable = new System.Windows.Forms.TableLayoutPanel();
+            this.PrimeNumberView = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
-            this.TablePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PrimeNumberView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -81,14 +80,14 @@
             // EratosthenesLimit_1
             // 
             this.EratosthenesLimit_1.Name = "EratosthenesLimit_1";
-            this.EratosthenesLimit_1.Size = new System.Drawing.Size(152, 22);
+            this.EratosthenesLimit_1.Size = new System.Drawing.Size(104, 22);
             this.EratosthenesLimit_1.Text = "100";
             this.EratosthenesLimit_1.Click += new System.EventHandler(this.EratosthenesLimit_1_Click);
             // 
             // EratosthenesLimit_2
             // 
             this.EratosthenesLimit_2.Name = "EratosthenesLimit_2";
-            this.EratosthenesLimit_2.Size = new System.Drawing.Size(152, 22);
+            this.EratosthenesLimit_2.Size = new System.Drawing.Size(104, 22);
             this.EratosthenesLimit_2.Text = "1000";
             this.EratosthenesLimit_2.Click += new System.EventHandler(this.EratosthenesLimit_2_Click);
             // 
@@ -97,7 +96,7 @@
             this.EratosthenesLimit_3.Checked = true;
             this.EratosthenesLimit_3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.EratosthenesLimit_3.Name = "EratosthenesLimit_3";
-            this.EratosthenesLimit_3.Size = new System.Drawing.Size(152, 22);
+            this.EratosthenesLimit_3.Size = new System.Drawing.Size(104, 22);
             this.EratosthenesLimit_3.Text = "10000";
             this.EratosthenesLimit_3.Click += new System.EventHandler(this.EratosthenesLimit_3_Click);
             // 
@@ -114,21 +113,21 @@
             // AtkinLimit_1
             // 
             this.AtkinLimit_1.Name = "AtkinLimit_1";
-            this.AtkinLimit_1.Size = new System.Drawing.Size(152, 22);
+            this.AtkinLimit_1.Size = new System.Drawing.Size(104, 22);
             this.AtkinLimit_1.Text = "100";
             this.AtkinLimit_1.Click += new System.EventHandler(this.AtkinLimit_1_Click);
             // 
             // AtkinLimit_2
             // 
             this.AtkinLimit_2.Name = "AtkinLimit_2";
-            this.AtkinLimit_2.Size = new System.Drawing.Size(152, 22);
+            this.AtkinLimit_2.Size = new System.Drawing.Size(104, 22);
             this.AtkinLimit_2.Text = "1000";
             this.AtkinLimit_2.Click += new System.EventHandler(this.AtkinLimit_2_Click);
             // 
             // AtkinLimit_3
             // 
             this.AtkinLimit_3.Name = "AtkinLimit_3";
-            this.AtkinLimit_3.Size = new System.Drawing.Size(152, 22);
+            this.AtkinLimit_3.Size = new System.Drawing.Size(104, 22);
             this.AtkinLimit_3.Text = "10000";
             this.AtkinLimit_3.Click += new System.EventHandler(this.AtkinLimit_3_Click);
             // 
@@ -159,36 +158,20 @@
             this.GenerateTable.UseVisualStyleBackColor = true;
             this.GenerateTable.Click += new System.EventHandler(this.GenerateTable_Click);
             // 
-            // TablePanel
+            // PrimeNumberView
             // 
-            this.TablePanel.AutoScroll = true;
-            this.TablePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.TablePanel.Controls.Add(this.PrimeNumberTable);
-            this.TablePanel.Location = new System.Drawing.Point(15, 92);
-            this.TablePanel.Name = "TablePanel";
-            this.TablePanel.Size = new System.Drawing.Size(1237, 577);
-            this.TablePanel.TabIndex = 5;
-            // 
-            // PrimeNumberTable
-            // 
-            this.PrimeNumberTable.AutoSize = true;
-            this.PrimeNumberTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.PrimeNumberTable.ColumnCount = 1;
-            this.PrimeNumberTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.PrimeNumberTable.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.PrimeNumberTable.Location = new System.Drawing.Point(3, 3);
-            this.PrimeNumberTable.Name = "PrimeNumberTable";
-            this.PrimeNumberTable.RowCount = 1;
-            this.PrimeNumberTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.PrimeNumberTable.Size = new System.Drawing.Size(54, 29);
-            this.PrimeNumberTable.TabIndex = 0;
+            this.PrimeNumberView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PrimeNumberView.Location = new System.Drawing.Point(12, 92);
+            this.PrimeNumberView.Name = "PrimeNumberView";
+            this.PrimeNumberView.Size = new System.Drawing.Size(1240, 577);
+            this.PrimeNumberView.TabIndex = 5;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.TablePanel);
+            this.Controls.Add(this.PrimeNumberView);
             this.Controls.Add(this.GenerateTable);
             this.Controls.Add(this.NumberOfPrimes);
             this.Controls.Add(this.label1);
@@ -200,8 +183,7 @@
             this.Text = "Prime Numbers Code Test";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.TablePanel.ResumeLayout(false);
-            this.TablePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PrimeNumberView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,8 +203,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NumberOfPrimes;
         private System.Windows.Forms.Button GenerateTable;
-        private System.Windows.Forms.Panel TablePanel;
-        private System.Windows.Forms.TableLayoutPanel PrimeNumberTable;
+        private System.Windows.Forms.DataGridView PrimeNumberView;
     }
 }
 

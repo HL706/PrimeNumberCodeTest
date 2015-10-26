@@ -42,6 +42,9 @@ namespace PrimeNumberCodeTest
         public MainForm()
         {
             InitializeComponent();
+
+            // This should make everything a little bit smoother :)
+            DoubleBuffered = true;
         }
 
         private void EratosthenesLimit_1_Click(object sender, EventArgs e)
@@ -107,8 +110,8 @@ namespace PrimeNumberCodeTest
 
         private void GenerateTable_Click(object sender, EventArgs e)
         {
-            // We're going to hide this as all the resizing looks pretty nasty.
-            PrimeNumberTable.Visible = false;
+            // We need to clear the view as it may have been previously populated.
+            
 
             // Set the generator based on the select menu items.
             if (AlgorithmSieveOfAtkin.Checked)
@@ -124,7 +127,7 @@ namespace PrimeNumberCodeTest
 
             int sizeOfTable = 0;
             bool isConversionSuccessful = Int32.TryParse(NumberOfPrimes.Text, out sizeOfTable);
-            if (! isConversionSuccessful)
+            if (! isConversionSuccessful || sizeOfTable == 0)
             {
                 sizeOfTable = DEFAULT_TABLE_SIZE;
             }
@@ -132,54 +135,44 @@ namespace PrimeNumberCodeTest
             // Get the range requested by the user.
             primeNumbers = primeNumbers.GetRange(0, sizeOfTable);
 
-            // Create the table.
-            PrimeNumberTable.ColumnCount = sizeOfTable + 1;
-            PrimeNumberTable.RowCount = sizeOfTable + 1;
+            // Create the size of the data view.
+            PrimeNumberView.ColumnCount = sizeOfTable;
+            PrimeNumberView.RowCount = sizeOfTable;
 
+            // Set the sizing of the cells so everything looks good.
+            PrimeNumberView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
 
-            // Create a table, making sure to place a label in each cell we use.
+            // Set the data contained within the view.
             int x;
             int y;
 
-            // Set the headers.
-            for (x = 1; x < PrimeNumberTable.ColumnCount; ++x)
+            // We'll start by setting the headers.
+            for (x = 0; x < PrimeNumberView.ColumnCount; ++x)
             {
-                Label label = new Label();
-                label.Size = new Size(50, 25);
-                label.Text = primeNumbers[x - 1].ToString();
-
-                PrimeNumberTable.Controls.Add(label, x, 0);
+                PrimeNumberView.Columns[x].HeaderCell.Value = primeNumbers[x].ToString();
             }
-            
-            for (y = 1; y < PrimeNumberTable.RowCount; ++y)
-            {
-                Label label = new Label();
-                label.Size = new Size(50, 25);
-                label.Text = primeNumbers[y - 1].ToString();
 
-                PrimeNumberTable.Controls.Add(label, 0, y);
+            for (y = 0; y < PrimeNumberView.RowCount; ++y)
+            {
+                PrimeNumberView.Rows[y].HeaderCell.Value = primeNumbers[y].ToString();
             }
 
             // Now that the headers are set we'll do the multiplications...
-            for (x = 1; x < PrimeNumberTable.ColumnCount; ++x)
+            for (x = 0; x < PrimeNumberView.ColumnCount; ++x)
             {
-                for (y = 1; y < PrimeNumberTable.RowCount; ++y)
+                for (y = 0; y < PrimeNumberView.RowCount; ++y)
                 {
-                    Label firstNumberLabel = PrimeNumberTable.GetControlFromPosition(0, y) as Label;
-                    int firstNumber = Int32.Parse(firstNumberLabel.Text);
+                    String firstNumberText = PrimeNumberView.Columns[x].HeaderCell.Value as String;
+                    int firstNumber = Int32.Parse(firstNumberText);
 
-                    Label secondNumberLabel = PrimeNumberTable.GetControlFromPosition(x, 0) as Label;
-                    int secondNumber = Int32.Parse(secondNumberLabel.Text);
+                    String secondNumberText = PrimeNumberView.Rows[y].HeaderCell.Value as String;
+                    int secondNumber = Int32.Parse(secondNumberText);
 
-                    Label cell = new Label();
-                    cell.Size = new Size(50, 25);
-                    cell.Text = (firstNumber * secondNumber).ToString();
-
-                    PrimeNumberTable.Controls.Add(cell, x, y);
+                    PrimeNumberView.Rows[x].Cells[y].Value = (firstNumber * secondNumber).ToString();
                 }
             }
 
-            PrimeNumberTable.Visible = true;
+            PrimeNumberView.Visible = true;
         }
     }
 }
