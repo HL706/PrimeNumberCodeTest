@@ -8,6 +8,11 @@ namespace PrimeNumberCodeTest.Utilities
 {
     interface IPrimeGenerator
     {
-        List<uint> GeneratePrimes(int numberOfPrimesToGenerate);
+        /// <summary>
+        /// GGenerates a list of prime numbers.
+        /// </summary>
+        /// <param name="limit">The max number in the range.</param>
+        /// <returns></returns>
+        List<int> GeneratePrimes(int limit);
     }
 }
