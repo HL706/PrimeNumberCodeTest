@@ -1,1 +1,9 @@
 c:\users\micha\documents\visual studio 2015\Projects\PrimeNumberCodeTest\PrimeNumberCodeTest\bin\Debug\PrimeNumberCodeTest.exe.config
+c:\users\micha\documents\visual studio 2015\Projects\PrimeNumberCodeTest\PrimeNumberCodeTest\obj\Debug\PrimeNumberCodeTest.csprojResolveAssemblyReference.cache
+c:\users\micha\documents\visual studio 2015\Projects\PrimeNumberCodeTest\PrimeNumberCodeTest\obj\Debug\PrimeNumberCodeTest.MainForm.resources
+c:\users\micha\documents\visual studio 2015\Projects\PrimeNumberCodeTest\PrimeNumberCodeTest\obj\Debug\PrimeNumberCodeTest.Properties.Resources.resources
+c:\users\micha\documents\visual studio 2015\Projects\PrimeNumberCodeTest\PrimeNumberCodeTest\obj\Debug\PrimeNumberCodeTest.csproj.GenerateResource.Cache
+c:\users\micha\documents\visual studio 2015\Projects\PrimeNumberCodeTest\PrimeNumberCodeTest\bin\Debug\PrimeNumberCodeTest.exe
+c:\users\micha\documents\visual studio 2015\Projects\PrimeNumberCodeTest\PrimeNumberCodeTest\bin\Debug\PrimeNumberCodeTest.pdb
+c:\users\micha\documents\visual studio 2015\Projects\PrimeNumberCodeTest\PrimeNumberCodeTest\obj\Debug\PrimeNumberCodeTest.exe
+c:\users\micha\documents\visual studio 2015\Projects\PrimeNumberCodeTest\PrimeNumberCodeTest\obj\Debug\PrimeNumberCodeTest.pdb
