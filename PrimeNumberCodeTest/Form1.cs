@@ -110,9 +110,6 @@ namespace PrimeNumberCodeTest
 
         private void GenerateTable_Click(object sender, EventArgs e)
         {
-            // We need to clear the view as it may have been previously populated.
-            
-
             // Set the generator based on the select menu items.
             if (AlgorithmSieveOfAtkin.Checked)
             {
@@ -132,7 +129,14 @@ namespace PrimeNumberCodeTest
                 sizeOfTable = DEFAULT_TABLE_SIZE;
             }
 
-            // Get the range requested by the user.
+            // Now that we've got the requested size of the table from the user we should really check to see if that
+            // size is valid. If not we'll cap it to stop a range error.
+            if (sizeOfTable >= primeNumbers.Count)
+            {
+                sizeOfTable = primeNumbers.Count - 1;
+            }
+
+            // Grab the prime numbers that the user is interested in.
             primeNumbers = primeNumbers.GetRange(0, sizeOfTable);
 
             // Create the size of the data view.
@@ -171,8 +175,6 @@ namespace PrimeNumberCodeTest
                     PrimeNumberView.Rows[x].Cells[y].Value = (firstNumber * secondNumber).ToString();
                 }
             }
-
-            PrimeNumberView.Visible = true;
         }
     }
 }
