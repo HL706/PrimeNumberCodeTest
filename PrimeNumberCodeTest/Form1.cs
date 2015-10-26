@@ -24,26 +24,53 @@ namespace PrimeNumberCodeTest
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Selects the sieve of eratosthenes algorithm.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AlgorithmSieveOfEratosthenes_Click(object sender, EventArgs e)
+        private void EratosthenesLimit_1_Click(object sender, EventArgs e)
         {
-            AlgorithmSieveOfEratosthenes.Checked = true;
-            AlgorithmSieveOfAtkin.Checked = false;
+            SetStateOfSelectionMenu(false, 1);
         }
 
-        /// <summary>
-        /// Selects the sieve of atkin algorithm.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AlgorithmSieveOfAtkin_Click(object sender, EventArgs e)
+        private void EratosthenesLimit_2_Click(object sender, EventArgs e)
         {
-            AlgorithmSieveOfAtkin.Checked = true;
-            AlgorithmSieveOfEratosthenes.Checked = false;
+            SetStateOfSelectionMenu(false, 2);
+        }
+
+        private void EratosthenesLimit_3_Click(object sender, EventArgs e)
+        {
+            SetStateOfSelectionMenu(false, 3);
+        }
+
+        private void AtkinLimit_1_Click(object sender, EventArgs e)
+        {
+            SetStateOfSelectionMenu(true, 1);
+        }
+
+        private void AtkinLimit_2_Click(object sender, EventArgs e)
+        {
+            SetStateOfSelectionMenu(true, 2);
+        }
+
+        private void AtkinLimit_3_Click(object sender, EventArgs e)
+        {
+            SetStateOfSelectionMenu(true, 3);
+        }
+
+        private void SetStateOfSelectionMenu(Boolean isAtkinAlgorithmSelected, int indexOfSelection)
+        {
+            SetStateOfAlgorithmMenu(isAtkinAlgorithmSelected);
+
+            EratosthenesLimit_1.Checked = !isAtkinAlgorithmSelected && indexOfSelection == 1;
+            EratosthenesLimit_2.Checked = !isAtkinAlgorithmSelected && indexOfSelection == 2;
+            EratosthenesLimit_3.Checked = !isAtkinAlgorithmSelected && indexOfSelection == 3;
+
+            AtkinLimit_1.Checked = isAtkinAlgorithmSelected && indexOfSelection == 1;
+            AtkinLimit_2.Checked = isAtkinAlgorithmSelected && indexOfSelection == 2;
+            AtkinLimit_3.Checked = isAtkinAlgorithmSelected && indexOfSelection == 3;
+        }
+
+        private void SetStateOfAlgorithmMenu(Boolean isAtkinAlgorithmSelected)
+        {
+            AlgorithmSieveOfEratosthenes.Checked = !isAtkinAlgorithmSelected;
+            AlgorithmSieveOfAtkin.Checked = isAtkinAlgorithmSelected;
         }
     }
 }

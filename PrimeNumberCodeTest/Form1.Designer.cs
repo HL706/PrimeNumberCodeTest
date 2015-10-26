@@ -37,7 +37,7 @@
             this.AlgorithmSieveOfAtkin = new System.Windows.Forms.ToolStripMenuItem();
             this.AtkinLimit_1 = new System.Windows.Forms.ToolStripMenuItem();
             this.AtkinLimit_2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.AtkinLLimit_3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.AtkinLimit_3 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.NumberOfPrimes = new System.Windows.Forms.TextBox();
             this.GenerateTable = new System.Windows.Forms.Button();
@@ -77,54 +77,60 @@
             this.AlgorithmSieveOfEratosthenes.Name = "AlgorithmSieveOfEratosthenes";
             this.AlgorithmSieveOfEratosthenes.Size = new System.Drawing.Size(185, 22);
             this.AlgorithmSieveOfEratosthenes.Text = "Sieve of Eratosthenes";
-            this.AlgorithmSieveOfEratosthenes.Click += new System.EventHandler(this.AlgorithmSieveOfEratosthenes_Click);
             // 
             // EratosthenesLimit_1
             // 
             this.EratosthenesLimit_1.Name = "EratosthenesLimit_1";
-            this.EratosthenesLimit_1.Size = new System.Drawing.Size(152, 22);
+            this.EratosthenesLimit_1.Size = new System.Drawing.Size(104, 22);
             this.EratosthenesLimit_1.Text = "100";
+            this.EratosthenesLimit_1.Click += new System.EventHandler(this.EratosthenesLimit_1_Click);
             // 
             // EratosthenesLimit_2
             // 
             this.EratosthenesLimit_2.Name = "EratosthenesLimit_2";
-            this.EratosthenesLimit_2.Size = new System.Drawing.Size(152, 22);
+            this.EratosthenesLimit_2.Size = new System.Drawing.Size(104, 22);
             this.EratosthenesLimit_2.Text = "1000";
+            this.EratosthenesLimit_2.Click += new System.EventHandler(this.EratosthenesLimit_2_Click);
             // 
             // EratosthenesLimit_3
             // 
+            this.EratosthenesLimit_3.Checked = true;
+            this.EratosthenesLimit_3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.EratosthenesLimit_3.Name = "EratosthenesLimit_3";
-            this.EratosthenesLimit_3.Size = new System.Drawing.Size(152, 22);
+            this.EratosthenesLimit_3.Size = new System.Drawing.Size(104, 22);
             this.EratosthenesLimit_3.Text = "10000";
+            this.EratosthenesLimit_3.Click += new System.EventHandler(this.EratosthenesLimit_3_Click);
             // 
             // AlgorithmSieveOfAtkin
             // 
             this.AlgorithmSieveOfAtkin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AtkinLimit_1,
             this.AtkinLimit_2,
-            this.AtkinLLimit_3});
+            this.AtkinLimit_3});
             this.AlgorithmSieveOfAtkin.Name = "AlgorithmSieveOfAtkin";
             this.AlgorithmSieveOfAtkin.Size = new System.Drawing.Size(185, 22);
             this.AlgorithmSieveOfAtkin.Text = "Sieve of Atkin";
-            this.AlgorithmSieveOfAtkin.Click += new System.EventHandler(this.AlgorithmSieveOfAtkin_Click);
             // 
             // AtkinLimit_1
             // 
             this.AtkinLimit_1.Name = "AtkinLimit_1";
             this.AtkinLimit_1.Size = new System.Drawing.Size(152, 22);
             this.AtkinLimit_1.Text = "100";
+            this.AtkinLimit_1.Click += new System.EventHandler(this.AtkinLimit_1_Click);
             // 
             // AtkinLimit_2
             // 
             this.AtkinLimit_2.Name = "AtkinLimit_2";
             this.AtkinLimit_2.Size = new System.Drawing.Size(152, 22);
             this.AtkinLimit_2.Text = "1000";
+            this.AtkinLimit_2.Click += new System.EventHandler(this.AtkinLimit_2_Click);
             // 
-            // AtkinLLimit_3
+            // AtkinLimit_3
             // 
-            this.AtkinLLimit_3.Name = "AtkinLLimit_3";
-            this.AtkinLLimit_3.Size = new System.Drawing.Size(152, 22);
-            this.AtkinLLimit_3.Text = "10000";
+            this.AtkinLimit_3.Name = "AtkinLimit_3";
+            this.AtkinLimit_3.Size = new System.Drawing.Size(152, 22);
+            this.AtkinLimit_3.Text = "10000";
+            this.AtkinLimit_3.Click += new System.EventHandler(this.AtkinLimit_3_Click);
             // 
             // label1
             // 
@@ -208,7 +214,7 @@
         private System.Windows.Forms.ToolStripMenuItem AlgorithmSieveOfAtkin;
         private System.Windows.Forms.ToolStripMenuItem AtkinLimit_1;
         private System.Windows.Forms.ToolStripMenuItem AtkinLimit_2;
-        private System.Windows.Forms.ToolStripMenuItem AtkinLLimit_3;
+        private System.Windows.Forms.ToolStripMenuItem AtkinLimit_3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NumberOfPrimes;
         private System.Windows.Forms.Button GenerateTable;
